@@ -44,7 +44,7 @@ NarrowCMS Client: Tested against v0.0.3
 
 ## next steps
 
-## server install
+### server install
 
 As with this example, NarrowCMS Server requires MongoDB, Node.js, Express, and Mongoose.
 
@@ -53,7 +53,7 @@ From inside the root of ones MEAN application, execute:
 
 Using the commented file "./index.js" as an example, include the NarrowCMS Server block (acts as middleware) into ones Express application.
 
-## client install
+### client install
 
 As with this example, NarrowCMS Client requires AngularJS, angular-resource, angular-cookies, and CKEditor.
 
