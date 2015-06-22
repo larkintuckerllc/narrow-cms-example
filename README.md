@@ -19,7 +19,8 @@ MongoDB needs to be running before starting the example.
 
 ### client
 
-* Internet Explorer v10 or greater
+* Internet Explorer v9 or greater for public facing elements.
+* Internet Explorer v10 or greater for administrative interface.
 * Updated versions of all other browsers
 
 Additionally it requires (included with this example):
@@ -38,9 +39,12 @@ Additionally it requires (included with this example):
 4. From inside folder, execute "node index.js" (starts example).
 5. From browser open: http://localhost:3000/mycms
 6. Login with admin password "mypassword".
-7. Create two editables (make first a Heading 1) and make note of their ids.
-8. From inside folder, edit "public/js/app.js" and update two editable ids.
-9. From browser open: http://localhost:3000
+7. Create four editables (make first a Heading 1 and third a Heading 2) and make note of their ids.
+8. Create a user.
+9. Logout of admin.
+10. From inside folder, edit "public/js/app.js" and update two editable ids.
+11. From browser open: http://localhost:3000
+12. Login as user created above.
 
 ## next steps
 
@@ -66,7 +70,7 @@ http://ckeditor.com/
 
 Using the commented file "./public/index.html" as an example, include the NarrowCMS Client requirements.
 
-Using the commented file "./public/js/app.js" as an example, implement NarrowCMS in ones AngularJS application.
+Using the commented files "./public/index.html" and "./public/js/app.js" as an example, implement NarrowCMS in ones AngularJS application.
 
 ## api reference
 
