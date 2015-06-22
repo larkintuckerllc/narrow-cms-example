@@ -37,6 +37,9 @@
     // CHANGE '_id' TO MATCH A CREATED EDITABLE
     $scope.example1 = ncEditableService
       .get({_id: '558605493d0a87ddf115cddd'});
+    // CHANGE '_id' TO MATCH A CREATED EDITABLE
+    $scope.example2 = ncEditableService
+      .get({_id: '55876f7d79737813fdb89ae4'});
     $scope.save = function() {
       $scope.example1.$update();
     };
