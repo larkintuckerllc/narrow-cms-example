@@ -42,11 +42,13 @@ Additionally it requires (included with this example):
 7. Create four editables (make first a Heading 1 and third a Heading 2) and make note of their ids.
 8. Create a user.
 9. Logout of admin.
-10. From inside folder, edit "public/js/app.js" and update two editable ids.
+10. From inside folder, edit "public/js/app.js" and update four editable ids.
 11. From browser open: http://localhost:3000
 12. Login as user created above.
 
 ## next steps
+
+Now that one used the working example, one can implment NarrowCMS in their own MEAN application.
 
 ### server install
 
