@@ -2,7 +2,7 @@
   "name": "narrow-cms-example",
   "dependencies": {
     "angular": "~1.4.0",
-    "narrow-cms-client": "~0.0.3",
+    "narrow-cms-client": "~0.1.1",
     "bootstrap": "~3.3.5"
   }
 }

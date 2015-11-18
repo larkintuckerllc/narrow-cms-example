@@ -5,7 +5,7 @@
     .config(ncConfig)
     .controller('Controller', Controller);
   function ncConfig(ncConfigServiceProvider) {
-    ncConfigServiceProvider.setApiRootURI('/mycms/'); // SETTING API ROOT URI
+    ncConfigServiceProvider.setApiRootURI('/cms/'); // SETTING API ROOT URI
     // NOTICE TRAILING SLASH IN ABOVE
     // SETTING CSS FOR PENCIL MARKER
     ncConfigServiceProvider.setPencilCss(
@@ -20,7 +20,12 @@
     // SETTING HTML FOR PENCIL MARKER
     ncConfigServiceProvider.setPencilHTML('<img src="img/edit.png" />');
   }
-  function Controller($scope, $window, ncAuthService, ncEditableService) {
+  function Controller($scope, $window, ncAuthService, ncEditableService, ncCachedEditableService) {
+    // CHANGE TO MATCH A CREATED EDITABLE
+    var example1Id  = '564b5981507846400c1c2235';
+    var example2Id  = '564b59c5507846400c1c2236';
+    var example3Id  = '564b59ec507846400c1c2237';
+    var example4Id  = '564b5a11507846400c1c2238';
     $scope.username = '';
     $scope.password = '';
     $scope.isAuth = ncAuthService.authSync(); // DETERMINING IF AUTHENTICATED
@@ -34,18 +39,17 @@
       ncAuthService.logout();
       $window.location.reload();
     };
-    // CHANGE '_id' TO MATCH A CREATED EDITABLE
-    $scope.example1 = ncEditableService
-      .get({_id: '558605493d0a87ddf115cddd'});
-    // CHANGE '_id' TO MATCH A CREATED EDITABLE
-    $scope.example2 = ncEditableService
-      .get({_id: '55876f7d79737813fdb89ae4'});
-    // CHANGE '_id' TO MATCH A CREATED EDITABLE
-    $scope.example3 = ncEditableService
-      .get({_id: '5587f233c81a2982000436bb'});
-    // CHANGE '_id' TO MATCH A CREATED EDITABLE
-    $scope.example4 = ncEditableService
-      .get({_id: '5587f24ac81a2982000436bc'});
+    if ($scope.isAuth) {
+      $scope.example1 = ncEditableService.get({_id: example1Id});
+      $scope.example2 = ncEditableService.get({_id: example2Id});
+      $scope.example3 = ncEditableService.get({_id: example3Id});
+      $scope.example4 = ncEditableService.get({_id: example4Id});
+    } else {
+      $scope.example1 = ncCachedEditableService.get({_id: example1Id});
+      $scope.example2 = ncCachedEditableService.get({_id: example2Id});
+      $scope.example3 = ncCachedEditableService.get({_id: example3Id});
+      $scope.example4 = ncCachedEditableService.get({_id: example4Id});
+    } 
     $scope.save = function() {
       $scope.example1.$update();
       $scope.example2.$update();

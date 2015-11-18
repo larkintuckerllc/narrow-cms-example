@@ -3,6 +3,6 @@
   "dependencies": {
     "express": "~4.12.4",
     "mongoose": "~4.0.5",
-    "narrow-cms-server": "~0.0.5"
+    "narrow-cms-server": "~0.1.1"
   }
 }
